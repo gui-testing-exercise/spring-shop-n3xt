@@ -34,7 +34,8 @@ public class ProductController {
     }
 
     @PostMapping("/product/new")
-    public String newProduct(@ModelAttribute("productForm") Product productForm, BindingResult bindingResult, Model model) {
+    public String newProduct(@ModelAttribute("productForm") Product productForm, BindingResult bindingResult,
+            Model model) {
         productValidator.validate(productForm, bindingResult);
 
         if (bindingResult.hasErrors()) {
@@ -49,19 +50,20 @@ public class ProductController {
     }
 
     @GetMapping("/product/edit/{id}")
-    public String editProduct(@PathVariable("id") long productId, Model model){
+    public String editProduct(@PathVariable("id") long productId, Model model) {
         Product product = productService.findById(productId);
-        if (product != null){
+        if (product != null) {
             model.addAttribute("productForm", product);
             model.addAttribute("method", "edit");
             return "product";
-        }else {
+        } else {
             return "error/404";
         }
     }
 
     @PostMapping("/product/edit/{id}")
-    public String editProduct(@PathVariable("id") long productId, @ModelAttribute("productForm") Product productForm, BindingResult bindingResult, Model model){
+    public String editProduct(@PathVariable("id") long productId, @ModelAttribute("productForm") Product productForm,
+            BindingResult bindingResult, Model model) {
         productValidator.validate(productForm, bindingResult);
 
         if (bindingResult.hasErrors()) {
@@ -75,14 +77,14 @@ public class ProductController {
         return "redirect:/home";
     }
 
-    @PostMapping("/product/delete/{id}")
-    public String deleteProduct(@PathVariable("id") long productId){
+    @GetMapping("/product/delete/{id}")
+    public String deleteProduct(@PathVariable("id") long productId) {
         Product product = productService.findById(productId);
-        if (product != null){
-           productService.delete(productId);
-           logger.debug(String.format("Product with id: %s successfully deleted.", product.getId()));
-           return "redirect:/home";
-        }else {
+        if (product != null) {
+            productService.delete(productId);
+            logger.debug(String.format("Product with id: %s successfully deleted.", product.getId()));
+            return "redirect:/home";
+        } else {
             return "error/404";
         }
     }

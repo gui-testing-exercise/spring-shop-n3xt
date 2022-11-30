@@ -22,18 +22,18 @@ $ git clone https://github.com/syqu22/spring-boot-shop-sample.git
 
 First you should do clean installation:
 ```sh
-$ mvn clean install
+$ ./mvnw clean install
 ```
 You can start application using Spring Boot custom command:
 ```sh
-$ mvn spring-boot:run
+$ ./mvnw spring-boot:run
 ```
 
 **Using Maven plugin and running JAR**
 
 You can create JAR file using:
 ```sh
-$ mvn clean package
+$ ./mvnw clean package
 ```
 and then run it with:
 ```sh
@@ -59,7 +59,7 @@ Login: ```user``` Password: ```user``` with **USER** role.
 
 You can run tests using:
 ```sh
-$ mvn test
+$ ./mvnw test
 ```
 
 ## License

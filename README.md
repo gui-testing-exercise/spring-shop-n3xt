@@ -15,7 +15,7 @@ This is my first project using Spring. I wanted to do e-commerce web application
 
 You can clone this repository and use it localy:
 ```sh
-$ git clone https://github.com/syqu22/spring-boot-shop-sample.git
+$ git clone https://github.com/gui-testing-exercise/spring-shop-n3xt.git
 ```
 
 **Using Maven plugin**

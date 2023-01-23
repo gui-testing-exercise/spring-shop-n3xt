@@ -10,10 +10,10 @@
             <footer>
                 <span th:text="#{footer.copyright}"></span>
                 <span>
-                    <a th:href="@{/about}" th:text="#{about.name}"></a>
+                    <a th:href="@{/about}" th:text="#{about.name}" data-cy="about-me-a"></a>
                 </span>
                 <label>
-                    <select class="custom-select" id="select-lang">
+                    <select class="custom-select" id="select-lang" data-cy="select-lang">
                         <option value="eng" th:selected="${#locale.getLanguage().toString() == 'en'}" th:text="#{footer.language.en}"></option>
                         <option value="pl" th:selected="${#locale.getLanguage().toString() == 'pl'}" th:text="#{footer.language.pl}"></option>
                         <option disabled value="den" th:selected="${#locale.getLanguage().toString() == 'den'}" th:text="#{footer.language.den}"></option>

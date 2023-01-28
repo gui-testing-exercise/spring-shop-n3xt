@@ -16,7 +16,7 @@
             <h4 th:text="${product.getValue()}"></h4>
             <h4 th:text="${product.getKey().getPrice()}"></h4>
             <a th:href="@{'/cart/remove/{id}'(id=${product.getKey().getId()})}" class="col-md-1">
-                <button type="button" class="btn btn-primary" th:text="#{cart.remove}"></button>
+                <button type="button" class="btn btn-primary" th:text="#{cart.remove}" data-cy="remove-cart-button"></button>
             </a>
             <br>
         </div>
@@ -28,14 +28,14 @@
 
     <br>
     <a th:href="@{'/cart/clear/'}" class="col-md-1">
-        <button type="button" class="btn btn-info" th:text="#{cart.clear}"></button>
+        <button type="button" class="btn btn-info" th:text="#{cart.clear}" data-cy="clear-cart-button"></button>
     </a>
 
     <br>
     <div class="row">
         <h3 th:text="#{cart.total} + ' ' + ${totalPrice}"></h3>">
         <a th:href="@{'/cart/checkout'}" class="col-md-1">
-            <button type="button" class="btn btn-success" th:text="#{cart.checkout}"></button>
+            <button type="button" class="btn btn-success" th:text="#{cart.checkout}" data-cy="checkout-cart-button"></button>
         </a>
     </div>
 </div>
